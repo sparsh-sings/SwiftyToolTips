@@ -17,6 +17,10 @@
 		549F1A2F2BAC6A7D004F8E23 /* SwiftyToolTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549F1A2E2BAC6A7D004F8E23 /* SwiftyToolTips.swift */; };
 		549F1A312BAC6B0B004F8E23 /* SwiftyToolTips.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549F1A0C2BAC68E2004F8E23 /* SwiftyToolTips.framework */; };
 		549F1A322BAC6B0B004F8E23 /* SwiftyToolTips.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 549F1A0C2BAC68E2004F8E23 /* SwiftyToolTips.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		549F1A392BAC74E8004F8E23 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549F1A382BAC74E8004F8E23 /* UIView+Extensions.swift */; };
+		549F1A3C2BAC7504004F8E23 /* ToolTipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549F1A3B2BAC7504004F8E23 /* ToolTipVC.swift */; };
+		549F1A402BAC7811004F8E23 /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549F1A3E2BAC7811004F8E23 /* TempView.swift */; };
+		549F1A412BAC7811004F8E23 /* TempView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 549F1A3F2BAC7811004F8E23 /* TempView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		549F1A282BAC6A2F004F8E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		549F1A2A2BAC6A2F004F8E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		549F1A2E2BAC6A7D004F8E23 /* SwiftyToolTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyToolTips.swift; sourceTree = "<group>"; };
+		549F1A382BAC74E8004F8E23 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		549F1A3B2BAC7504004F8E23 /* ToolTipVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolTipVC.swift; sourceTree = "<group>"; };
+		549F1A3E2BAC7811004F8E23 /* TempView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
+		549F1A3F2BAC7811004F8E23 /* TempView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TempView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				549F1A0F2BAC68E2004F8E23 /* SwiftyToolTips.h */,
+				549F1A372BAC7452004F8E23 /* Private */,
 				549F1A362BAC6B91004F8E23 /* Public */,
 			);
 			path = SwiftyToolTips;
@@ -107,6 +116,7 @@
 		549F1A1B2BAC6A2C004F8E23 /* SwiftyToolTipsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				549F1A3D2BAC7811004F8E23 /* View */,
 				549F1A1C2BAC6A2C004F8E23 /* AppDelegate.swift */,
 				549F1A1E2BAC6A2C004F8E23 /* SceneDelegate.swift */,
 				549F1A202BAC6A2C004F8E23 /* ViewController.swift */,
@@ -131,6 +141,24 @@
 				549F1A2E2BAC6A7D004F8E23 /* SwiftyToolTips.swift */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		549F1A372BAC7452004F8E23 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				549F1A3B2BAC7504004F8E23 /* ToolTipVC.swift */,
+				549F1A382BAC74E8004F8E23 /* UIView+Extensions.swift */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		549F1A3D2BAC7811004F8E23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				549F1A3E2BAC7811004F8E23 /* TempView.swift */,
+				549F1A3F2BAC7811004F8E23 /* TempView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +264,7 @@
 			files = (
 				549F1A292BAC6A2F004F8E23 /* LaunchScreen.storyboard in Resources */,
 				549F1A262BAC6A2F004F8E23 /* Assets.xcassets in Resources */,
+				549F1A412BAC7811004F8E23 /* TempView.xib in Resources */,
 				549F1A242BAC6A2C004F8E23 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,7 +276,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				549F1A392BAC74E8004F8E23 /* UIView+Extensions.swift in Sources */,
 				549F1A2F2BAC6A7D004F8E23 /* SwiftyToolTips.swift in Sources */,
+				549F1A3C2BAC7504004F8E23 /* ToolTipVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +288,7 @@
 			files = (
 				549F1A212BAC6A2C004F8E23 /* ViewController.swift in Sources */,
 				549F1A1D2BAC6A2C004F8E23 /* AppDelegate.swift in Sources */,
+				549F1A402BAC7811004F8E23 /* TempView.swift in Sources */,
 				549F1A1F2BAC6A2C004F8E23 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +462,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,6 +495,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

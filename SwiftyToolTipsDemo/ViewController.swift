@@ -10,6 +10,7 @@ import SwiftyToolTips
 
 class ViewController: UIViewController {
     
+    @IBOutlet var parentView: UIView!
     @IBOutlet weak var mainButton: UIButton!
     
     let customeView = SwiftyToolTips.shared.nibView(customView: TempView.self)
@@ -28,11 +29,13 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        SwiftyToolTips.shared.showToolTip(onItem: mainButton, cmView: customeView, arrowDirection: .up)
+        SwiftyToolTips.shared.showToolTip(mainView: parentView, onItem: mainButton, cmView: customeView, arrowDirection: .down)
     }
     
     @objc func dismissPop() {
-        SwiftyToolTips.shared.dismissToolTip(animated: true)
+        SwiftyToolTips.shared.dismissToolTip(animated: true) {
+            print("This is dismissed")
+        }
     }
 
 }

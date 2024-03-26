@@ -39,4 +39,21 @@ extension UIView {
         else { fatalError("view of type \(Self.self) not found in \(nib)") }
         return view
     }
+    func fadeIn(completion: (() -> Void)? = nil) {
+        alpha = 0
+        isHidden = false
+        UIView.animate(withDuration: 0.3, animations: {
+            self.alpha = 1
+        }) { (_) in
+            completion?()
+        }
+    }
+    func fadeOut(completion: (() -> Void)? = nil) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.alpha = 0
+        }) { (_) in
+            self.isHidden = true
+            completion?()
+        }
+    }
 }

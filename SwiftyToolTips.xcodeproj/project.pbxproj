@@ -21,6 +21,8 @@
 		549F1A3C2BAC7504004F8E23 /* ToolTipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549F1A3B2BAC7504004F8E23 /* ToolTipVC.swift */; };
 		549F1A402BAC7811004F8E23 /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549F1A3E2BAC7811004F8E23 /* TempView.swift */; };
 		549F1A412BAC7811004F8E23 /* TempView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 549F1A3F2BAC7811004F8E23 /* TempView.xib */; };
+		54DF54792BB306A300C8C107 /* SnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF54782BB306A300C8C107 /* SnapshotView.swift */; };
+		54DF547B2BB3073B00C8C107 /* DarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF547A2BB3073B00C8C107 /* DarkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		549F1A3B2BAC7504004F8E23 /* ToolTipVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolTipVC.swift; sourceTree = "<group>"; };
 		549F1A3E2BAC7811004F8E23 /* TempView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
 		549F1A3F2BAC7811004F8E23 /* TempView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TempView.xib; sourceTree = "<group>"; };
+		54DF54782BB306A300C8C107 /* SnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotView.swift; sourceTree = "<group>"; };
+		54DF547A2BB3073B00C8C107 /* DarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 		549F1A372BAC7452004F8E23 /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				54DF547A2BB3073B00C8C107 /* DarkView.swift */,
+				54DF54782BB306A300C8C107 /* SnapshotView.swift */,
 				549F1A3B2BAC7504004F8E23 /* ToolTipVC.swift */,
 				549F1A382BAC74E8004F8E23 /* UIView+Extensions.swift */,
 			);
@@ -276,6 +282,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54DF547B2BB3073B00C8C107 /* DarkView.swift in Sources */,
+				54DF54792BB306A300C8C107 /* SnapshotView.swift in Sources */,
 				549F1A392BAC74E8004F8E23 /* UIView+Extensions.swift in Sources */,
 				549F1A2F2BAC6A7D004F8E23 /* SwiftyToolTips.swift in Sources */,
 				549F1A3C2BAC7504004F8E23 /* ToolTipVC.swift in Sources */,

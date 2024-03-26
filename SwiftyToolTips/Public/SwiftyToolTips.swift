@@ -32,6 +32,8 @@ extension SwiftyToolTips {
             presentedViewController = presented
         }
         
+        addHighlightOverlay(forHighlightedItems: [viewItem, cmView])
+        
         presentedViewController.present(tooltipVC, animated: true)
     }
     
@@ -42,5 +44,30 @@ extension SwiftyToolTips {
     public func nibView<T: UIView>(customView: T.Type, named: String? = nil) -> T {
         return T.fromNib(named: named)
     }
+    
+    func addHighlightOverlay(forHighlightedItems items: [UIView]) {
+        guard let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else { return }
+
+        // Create the overlay view with a semi-transparent background
+        let overlayView = UIView(frame: window.bounds)
+        overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+        window.addSubview(overlayView)
+
+        // Create a path for the overlay
+        let overlayPath = UIBezierPath(rect: window.bounds)
+        
+        // Create paths for each item to be highlighted
+        items.forEach { itemView in
+            let itemFrame = itemView.convert(itemView.bounds, to: window)
+            let itemPath = UIBezierPath(rect: itemFrame)
+            overlayPath.append(itemPath.reversing())
+        }
+
+        // Create a shape layer to mask the overlay
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = overlayPath.cgPath
+        overlayView.layer.mask = maskLayer
+    }
+
     
 }

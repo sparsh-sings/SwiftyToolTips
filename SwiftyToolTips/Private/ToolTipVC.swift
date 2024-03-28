@@ -9,8 +9,15 @@ import UIKit
 
 class ToolTipVC : UIViewController {
     
+    var onDismiss: (() -> Void)?
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        onDismiss?()
     }
     
     public func showToolTip(onItem viewItem: UIView, cmView: UIView, arrowDirection: UIPopoverArrowDirection = .any, viewSize: CGSize =  CGSize(width: CGFloat(246), height: CGFloat(112))) {

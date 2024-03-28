@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         customeView.lblTitle.text = "Lorem Ipsum is simply"
         customeView.lblDescription.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
         
+        SwiftyToolTips.shared.delegate = self
         
     }
     
@@ -37,6 +38,19 @@ class ViewController: UIViewController {
             print("This is dismissed")
         }
     }
+    
+    @IBAction func buttonAct(_ sender: UIButton) {
+        SwiftyToolTips.shared.showToolTip(mainView: parentView, onItem: mainButton, cmView: customeView, arrowDirection: .down)
+    }
+    
 
 }
 
+extension ViewController : SwiftyToolTipsDelegate {
+    
+    func toolTipDismissedOnTappingOutsideView() {
+        print("Application Did Tapped Outside")
+        SwiftyToolTips.shared.dismissToolTip(animated: true)
+    }
+    
+}

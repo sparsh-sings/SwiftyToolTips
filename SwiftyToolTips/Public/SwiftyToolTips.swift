@@ -10,6 +10,7 @@ import UIKit
 public final class SwiftyToolTips : NSObject {
     
     public static let shared    = SwiftyToolTips()
+    public var delegate         : SwiftyToolTipsDelegate?
     
     private let tooltipVC       = ToolTipVC()
     private var parentView      = UIView()
@@ -23,6 +24,12 @@ extension SwiftyToolTips {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let topViewController = windowScene.windows.first?.rootViewController else {
             fatalError("Unable to get the topmost view controller.")
+        }
+        
+        tooltipVC.onDismiss = { [weak self] in
+//            self?.parentView.removeSnapshots()
+//            self?.parentView.removeDarkView()
+            self?.delegate?.toolTipDismissedOnTappingOutsideView()
         }
         
         self.parentView = parentView

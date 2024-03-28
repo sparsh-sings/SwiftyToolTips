@@ -10,6 +10,7 @@ import UIKit
 public final class SwiftyToolTips : NSObject {
     
     public static let shared    = SwiftyToolTips()
+    public var delegate         : SwiftyToolTipsDelegate?
     
     private let tooltipVC       = ToolTipVC()
     private var parentView      = UIView()
@@ -25,6 +26,10 @@ extension SwiftyToolTips {
             fatalError("Unable to get the topmost view controller.")
         }
         
+        tooltipVC.onDismiss = { [weak self] in
+            self?.delegate?.toolTipDismissedOnTappingOutsideView()
+        }
+        
         self.parentView = parentView
         
         let size = CGSize(width: UIScreen.main.bounds.width - 40, height: CGFloat(112))
@@ -38,6 +43,7 @@ extension SwiftyToolTips {
         parentView.addDarkView { [weak self] in
             parentView.addSnapshot(of: viewItem)
             guard let toolTipVC = self?.tooltipVC else { return }
+            presentedViewController.modalPresentationStyle = .overCurrentContext
             presentedViewController.present(toolTipVC, animated: true)
         }
     }

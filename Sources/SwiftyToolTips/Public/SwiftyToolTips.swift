@@ -43,7 +43,6 @@ extension SwiftyToolTips {
         parentView.addDarkView { [weak self] in
             parentView.addSnapshot(of: viewItem)
             guard let toolTipVC = self?.tooltipVC else { return }
-            presentedViewController.modalPresentationStyle = .overCurrentContext
             presentedViewController.present(toolTipVC, animated: true)
         }
     }

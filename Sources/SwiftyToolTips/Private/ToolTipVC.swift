@@ -34,6 +34,10 @@ class ToolTipVC : UIViewController {
         presentationController.delegate = self
     }
     
+    deinit {
+        print("ToolTipVC is deinit")
+    }
+    
 }
 
 extension ToolTipVC: UIPopoverPresentationControllerDelegate {

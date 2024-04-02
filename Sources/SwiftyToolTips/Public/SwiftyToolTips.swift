@@ -12,7 +12,7 @@ public final class SwiftyToolTips : NSObject {
     public static let shared    = SwiftyToolTips()
     public var delegate         : SwiftyToolTipsDelegate?
     
-    private let tooltipVC       = ToolTipVC()
+    private var tooltipVC       : ToolTipVC?
     private var parentView      = UIView()
     
 }
@@ -21,19 +21,21 @@ extension SwiftyToolTips {
     
     public func showToolTip(mainView parentView: UIView, onItem viewItem: UIView, cmView: UIView, arrowDirection: UIPopoverArrowDirection = .any, viewSize: CGSize? = nil) {
         
+        tooltipVC = ToolTipVC()
+        
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let topViewController = windowScene.windows.first?.rootViewController else {
             fatalError("Unable to get the topmost view controller.")
         }
         
-        tooltipVC.onDismiss = { [weak self] in
+        tooltipVC?.onDismiss = { [weak self] in
             self?.delegate?.toolTipDismissedOnTappingOutsideView()
         }
         
         self.parentView = parentView
         
         let size = CGSize(width: UIScreen.main.bounds.width - 40, height: CGFloat(112))
-        tooltipVC.showToolTip(onItem: viewItem, cmView: cmView, arrowDirection: arrowDirection, viewSize: viewSize ?? size)
+        tooltipVC?.showToolTip(onItem: viewItem, cmView: cmView, arrowDirection: arrowDirection, viewSize: viewSize ?? size)
         
         var presentedViewController = topViewController
         while let presented = presentedViewController.presentedViewController {
@@ -50,7 +52,7 @@ extension SwiftyToolTips {
     public func dismissToolTip(animated : Bool, completion: (() -> Void)? = nil) {
         parentView.removeSnapshots()
         parentView.removeDarkView()
-        tooltipVC.dismiss(animated: animated) {
+        tooltipVC?.dismiss(animated: animated) {
             completion?()
         }
     }

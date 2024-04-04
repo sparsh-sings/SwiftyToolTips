@@ -44,5 +44,9 @@ extension ToolTipVC: UIPopoverPresentationControllerDelegate {
     public func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
+    
+    public func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
+        return false
+    }
 }
 
